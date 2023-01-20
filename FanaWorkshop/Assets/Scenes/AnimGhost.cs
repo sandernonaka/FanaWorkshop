@@ -13,8 +13,8 @@ public class AnimGhost : MonoBehaviour
         Y,
         Z
     }
-    [field: SerializeField]
-    private int AnimationClipIndex { get; set; }
+
+    [field: SerializeField] private int AnimationClipIndex { get; set; }
 
     [field: SerializeField] private AnimationClip[] AnimationClipList { get; set; }
 
@@ -25,7 +25,7 @@ public class AnimGhost : MonoBehaviour
     [field: SerializeField] private float DummySize { get; set; }
 
     private int TotalFrames { get; set; }
-    
+
     private float TotalSecs { get; set; }
 
     private Dictionary<string, Vector3[]> CurvesDictionary { get; set; }
@@ -35,7 +35,7 @@ public class AnimGhost : MonoBehaviour
     {
         if (Animator == null)
             return;
-        
+
         if (AnimationClipIndex >= AnimationClipList.Length)
             return;
 
@@ -104,7 +104,9 @@ public class AnimGhost : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Debug.Log(CurvesDictionary.Count);
+        if (CurvesDictionary == null)
+            return;
+
         foreach (var curvesInfo in CurvesDictionary)
         {
             foreach (var position in curvesInfo.Value)
