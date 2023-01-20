@@ -602,6 +602,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1557403538}
   - component: {fileID: 1557403537}
+  - component: {fileID: 1557403539}
   m_Layer: 0
   m_Name: ANC
   m_TagString: Untagged
@@ -645,3 +646,28 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1557403539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1557403536}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c13a87ac5560b14ebdd62fa83023b4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <AnimationClipIndex>k__BackingField: 0
+  <AnimationClipList>k__BackingField:
+  - {fileID: 7400000, guid: efeee0a11b6898745916c9aaac409352, type: 2}
+  - {fileID: 7400000, guid: dd0acef0498572d40a804bd74d310c83, type: 2}
+  - {fileID: 7400000, guid: 101dcdf8761211147b787da14a08c5d0, type: 2}
+  - {fileID: 7400000, guid: e681effc46a3208479e7393d13b74aee, type: 2}
+  - {fileID: 7400000, guid: 1958bfd07f51a9449aef475eb134caed, type: 2}
+  - {fileID: 7400000, guid: 5db5f534cc8bed04f84468d04adf007e, type: 2}
+  - {fileID: 7400000, guid: aacd9723993a07c468f9aa1db437137d, type: 2}
+  - {fileID: 7400000, guid: d23e1d99537c3d44398722775708836c, type: 2}
+  <Animator>k__BackingField: {fileID: 1557403537}
+  <FPS>k__BackingField: 60
+  <DummySize>k__BackingField: 0.05

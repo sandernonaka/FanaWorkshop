@@ -13,14 +13,20 @@ public class AnimGhost : MonoBehaviour
         Y,
         Z
     }
+    [field: SerializeField]
+    private int AnimationClipIndex { get; set; }
+
+    [field: SerializeField] private AnimationClip[] AnimationClipList { get; set; }
 
     [field: SerializeField] private Animator Animator { get; set; }
 
     [field: SerializeField] private int FPS { get; set; }
-    
+
     [field: SerializeField] private float DummySize { get; set; }
 
     private int TotalFrames { get; set; }
+    
+    private float TotalSecs { get; set; }
 
     private Dictionary<string, Vector3[]> CurvesDictionary { get; set; }
 
@@ -29,29 +35,24 @@ public class AnimGhost : MonoBehaviour
     {
         if (Animator == null)
             return;
+        
+        if (AnimationClipIndex >= AnimationClipList.Length)
+            return;
 
         CurvesDictionary = new Dictionary<string, Vector3[]>();
-
-        foreach (var animatorClipInfo in Animator.GetCurrentAnimatorClipInfo(0))
-        {
-            
-            AnimationClip clip = animatorClipInfo.clip;
-            ShowClipCurve(clip);
-        }
+        ShowClipCurve(AnimationClipList[AnimationClipIndex]);
     }
 
     private void ShowClipCurve(AnimationClip clip)
     {
-        float totalSec = clip.length;
+        TotalSecs = clip.length;
 
-        TotalFrames = Mathf.FloorToInt(FPS * totalSec);
+        TotalFrames = Mathf.FloorToInt(FPS * TotalSecs);
 
         foreach (var binding in AnimationUtility.GetCurveBindings(clip))
         {
             if (binding.type != typeof(Transform))
                 continue;
-            
-            Debug.Log(binding.path);
 
             if (binding.propertyName == "m_LocalPosition.x")
             {
@@ -84,9 +85,11 @@ public class AnimGhost : MonoBehaviour
 
         for (int i = 1; i < TotalFrames; i++)
         {
-            float perc = i / (float) TotalFrames;
+            float percentage = i / (float) TotalFrames;
 
-            float value = curve.Evaluate(perc);
+            float time = TotalSecs * percentage;
+
+            float value = curve.Evaluate(time);
 
             if (transformPosition == TransformPosition.X)
                 positionsList[i].x = value;
