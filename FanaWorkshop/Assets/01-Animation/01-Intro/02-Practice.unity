@@ -528,6 +528,7 @@ MonoBehaviour:
   <AnimationClipList>k__BackingField:
   - {fileID: 7400000, guid: 2be1738cf54d83f41b7624746e2eb210, type: 2}
   - {fileID: 7400000, guid: 5ae183de24737204884b64e2cb83152b, type: 2}
+  - {fileID: 7400000, guid: f5a85f0b8c826144baf4cf14d495691d, type: 2}
   <Animator>k__BackingField: {fileID: 1557403537}
-  <FPS>k__BackingField: 60
-  <DummySize>k__BackingField: 0.05
+  <FPS>k__BackingField: 30
+  <DummySize>k__BackingField: 0.02
