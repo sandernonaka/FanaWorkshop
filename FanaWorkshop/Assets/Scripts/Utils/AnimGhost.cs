@@ -13,6 +13,8 @@ public class AnimGhost : MonoBehaviour
         Y,
         Z
     }
+    
+    [field: SerializeField] private bool Hide { get; set; }
 
     [field: SerializeField] private int AnimationClipIndex { get; set; }
 
@@ -104,7 +106,7 @@ public class AnimGhost : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (CurvesDictionary == null)
+        if (CurvesDictionary == null || Hide)
             return;
 
         foreach (var curvesInfo in CurvesDictionary)
