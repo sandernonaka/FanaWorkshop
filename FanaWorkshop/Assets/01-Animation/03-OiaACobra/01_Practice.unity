@@ -188,10 +188,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c13a87ac5560b14ebdd62fa83023b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Hide>k__BackingField: 0
+  <Hide>k__BackingField: 1
   <AnimationClipIndex>k__BackingField: 0
   <AnimationClipList>k__BackingField:
-  - {fileID: 7400000, guid: 1a1a33d01c040dd419179867f2417377, type: 2}
+  - {fileID: 7400000, guid: 521f28b36a7632549a9673c8767bbacd, type: 2}
   <Animator>k__BackingField: {fileID: 233109957}
   <FPS>k__BackingField: 60
   <DummySize>k__BackingField: 0.02
@@ -1001,7 +1001,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6182732520045725177, guid: 2221896c0e8a8ea4591b03f1f7e95a04, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5
+      value: -1.74
       objectReference: {fileID: 0}
     - target: {fileID: 6182732520045725177, guid: 2221896c0e8a8ea4591b03f1f7e95a04, type: 3}
       propertyPath: m_LocalPosition.y
